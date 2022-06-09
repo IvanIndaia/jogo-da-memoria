@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.interface {
+    font-family: 'Righteous', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-color: #c7cdd3;
+}
+
+
+/* ================= CARD ================= */
+.card {
+    width: 95px;
+    height: 95px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+
+/* ============ CARD-BACK e CARD-FRONT ============ */
+.card_back, .card_front {
+    width: 99%;
+    height: 99%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    backface-visibility: hidden;
+}
+
+
+/* ================= CARD-FRONT ================= */
+.flip {
+    transform: rotateY(180deg);
+}
+
+
+/* ================= CARD-FRONT ================= */
+.card_front {
+    transform: rotateY(180deg);
+    background-color: #101c2c;
+}
+
+
+/* ================= CARD-BACK ================= */
+.card_back {
+    background-color: #05c3ff;
+    color: 101c2c;
+    font-size: 30px;
+    cursor: pointer;
+    /* display: none; */
+}
+
+.card_back:hover {
+    background-image: radial-gradient(#e3f4fa, #05c3ff);
+    width: 103px;
+    height: 103px;
+}
+
+
+/* ================= ICON ================= */
+.icon {
+    width: 100px;
+}
+
+
+/* ================= BUTTON ================= */
+button:hover {
+    cursor: pointer;
+}
+
+
+/* ================= GAME-OVER ================= */
+#gameOver {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 45px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+
+/* ================= INICIAR JOGO ================= */
+#startMemory {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.900);
+    color: white;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+
+
+/* ================= RESTART STARTER ================= */
+#restart, #starter {
+    padding: 20px;
+    font-size: 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#starter {
+    width: 400px;
+    background-color: green;
+}
+
+
+/* ================= GAME-BOARD ================= */
+#gameBoard {
+    max-width: 700px;
+    max-height: 720px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    /* background-color: red; */
+    align-items: right;
+}
+
+.gamer {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    /* border-radius: 75%; */
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: 25px;
+    overflow: hidden;
+}
+
+#j1 {
+    padding: 100px;
+    color: red;
+}
+
+#j2 {
+    padding: 100px;
+    color: blue;
+}
+
+
+/**** ================= *** MEDIA *** ================= ****/
+@media (max-width: 600px) {
+    #gameBoard {
+        gap: 8px;
+        max-width: 700px;
+        max-height: 650px;
+    }
+    .card {
+        width: 80px;
+        height: 70px;
+    }
+    .card_back:hover {
+        background-image: radial-gradient(#e3f4fa, #05c3ff);
+        width: 85px;
+        height: 85px;
+    }
+    .interface {
+        max-height: 705px;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 105vh;
+    }
+    #j1 {
+        padding: 5px;
+        color: red;
+        width: 210px;
+        /* border: 1px solid black; */
+    }
+    
+    #j2 {
+        /* border: 1px solid black; */
+        padding: 5px;
+        color: blue;
+        width: 210px;
+    }
+
+    .gamer {
+        font-size: 23px;
+    }
+}
