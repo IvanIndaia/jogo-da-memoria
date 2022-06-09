@@ -9,8 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120vh;
-    background-color: #c7cdd3;
+    height: 115vh;
+    background-color: #c7cdd3;    
+    overflow: hidden;
 }
 
 
