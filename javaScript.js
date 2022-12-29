@@ -19,6 +19,7 @@ function inicializeCards(cards) {
     let gameBoard = document.getElementById("gameBoard")
     // console.log(gameBoard)
 
+
     gameBoard.innerHTML = ''
     game.cards.forEach(card => {
 
@@ -31,7 +32,11 @@ function inicializeCards(cards) {
 
         cardElement.addEventListener('click', flipCard)
         gameBoard.appendChild(cardElement)
+
+        
     })
+    // console.log(`Jogador 1 = ${jogador1}`)
+    // console.log(`Jogador 2 = ${jogador2}`)
 }
 
 
@@ -63,6 +68,9 @@ let conta = 0
 let joga = ['joga1', 'joga2', 0, 0]
 
 function flipCard() {
+    console.log(`Jogador 1 = ${jogador1}`)
+    console.log(`Jogador 2 = ${jogador2}`)
+
     if (conta == 0) {
         if (gaming == 1) {
             gaming = 2
@@ -75,8 +83,10 @@ function flipCard() {
     }else {
         conta = 0
     }
+    
 
     if (game.setCard(this.id)) {
+
         this.classList.add("flip")
         if (game.secondCard) {
             if (game.checkMatch()) {
@@ -91,7 +101,20 @@ function flipCard() {
                 game.clearCards()
                 if (game.checkGameOver()) {
                     let gameOverLayer = document.getElementById("gameOver")
+                    let titio = document.getElementById("tios")
+
                     gameOverLayer.style.display = 'flex'
+                    if (jogador1 == 'Juninho' || jogador1 == 'juninho'){    
+                        var textTio = document. createTextNode("Parabéns Tio Ju. O mais novo Titio da Família!!!");
+                    } else if (jogador1 == 'Talita' || jogador1 == 'talita'){
+                        var textTio = document. createTextNode("Parabéns Tia Tatá. A mais nova Titia da Família!!!");
+                    } else if (jogador1 == 'Miguel' || jogador1 == 'miguel'){
+                        var textTio = document. createTextNode("Parabéns Primo. A tia Lu vai ter um Bebê!!! <");
+                    }
+                    else {
+                        var textTio = document. createTextNode("Parabéns!");
+                    }
+                    titio.appendChild(textTio)
                 }
             } else {
                 setTimeout(() => {
@@ -102,7 +125,7 @@ function flipCard() {
                     firstCardView.classList.remove('flip')
                     secondCardView.classList.remove('flip')
                     game.unflipCards()
-                }, 1000)
+                }, 500)
             }
         }
     }
@@ -116,8 +139,8 @@ function restart() {
 }
 
 function starter() {
-    let jogador1 = prompt("Digite o nome do Jogador 1")
-    let jogador2 = prompt("Digite o nome do Jogador 2")
+    jogador1 = prompt("Digite o nome do Jogador 1")
+    jogador2 = prompt("Digite o nome do Jogador 2")
 
     let jog1 = document.getElementById("j1")
     let jog2 = document.getElementById("j2")
