@@ -109,7 +109,9 @@ function flipCard() {
                     } else if (jogador1 == 'Talita' || jogador1 == 'talita'){
                         var textTio = document. createTextNode("Parabéns Tia Tatá. A mais nova Titia da Família!!!");
                     } else if (jogador1 == 'Miguel' || jogador1 == 'miguel'){
-                        var textTio = document. createTextNode("Parabéns Primo. A tia Lu vai ter um Bebê!!! <");
+                        var textTio = document. createTextNode("Parabéns Primo. A tia Lu vai ter um Bebê!!!");
+                    } else if (jogador1 == 'Ademar' || jogador1 == 'ademar'){
+                        var textTio = document. createTextNode("Parabéns Titios. Sua sobrinha Luana vai ter um Bebê!!!");
                     }
                     else {
                         var textTio = document. createTextNode("Parabéns!");
